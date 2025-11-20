@@ -1,0 +1,53 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: mach10-postgres
+    environment:
+      POSTGRES_USER: mach10
+      POSTGRES_PASSWORD: mach10password
+      POSTGRES_DB: mach10_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7
+    container_name: mach10-redis
+    ports:
+      - "6379:6379"
+
+  backend:
+    build: ./backend
+    container_name: mach10-backend
+    depends_on:
+      - postgres
+      - redis
+    environment:
+      DATABASE_URL: postgresql+psycopg2://mach10:mach10password@postgres:5432/mach10_db
+      REDIS_URL: redis://redis:6379/0
+    ports:
+      - "8000:8000"
+
+  cv_service:
+    build: ./cv_service
+    container_name: mach10-cv-service
+    depends_on:
+      - backend
+    environment:
+      BACKEND_URL: http://backend:8000
+      CAMERA_STREAM_URL: rtsp://your-camera-url
+    # add `deploy.resources.reservations.devices` for GPU if needed
+
+  frontend:
+    build: ./frontend
+    container_name: mach10-frontend
+    depends_on:
+      - backend
+    ports:
+      - "3000:80"
+
+volumes:
+  postgres_data:
