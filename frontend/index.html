@@ -1,0 +1,630 @@
+import React from "react";
+
+const Mach10Landing: React.FC = () => {
+  const currentYear = new Date().getFullYear();
+
+  return (
+    <div className="bg-slate-950 text-slate-50 min-h-screen">
+      {/* NAVBAR */}
+      <header className="sticky top-0 z-30 backdrop-blur bg-slate-950/80 border-b border-slate-800">
+        <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+          {/* Hackathon-style logo */}
+          <div className="flex items-center gap-2">
+            <div className="w-9 h-9 rounded-2xl bg-gradient-to-br from-emerald-400 to-orange-400 flex items-center justify-center shadow-lg shadow-emerald-500/30">
+              <span className="text-slate-950 font-extrabold text-lg">
+                M10
+              </span>
+            </div>
+            <div>
+              <p className="font-semibold text-sm sm:text-base tracking-tight">
+                MACH-10: TrafficOps+
+              </p>
+              <p className="text-[11px] text-slate-400 hidden sm:block">
+                Coimbatore Smart Mobility | Hackathon Edition
+              </p>
+            </div>
+          </div>
+
+          <div className="hidden md:flex items-center gap-6 text-sm text-slate-300">
+            <a href="#problem" className="hover:text-emerald-400">
+              Problem
+            </a>
+            <a href="#solution" className="hover:text-emerald-400">
+              Features
+            </a>
+            <a href="#stack" className="hover:text-emerald-400">
+              Tech Stack
+            </a>
+            <a href="#impact" className="hover:text-emerald-400">
+              Impact
+            </a>
+            <a href="#contact" className="hover:text-emerald-400">
+              Contact
+            </a>
+            <a
+              href="#demo"
+              className="ml-2 inline-flex items-center rounded-full border border-emerald-400/60 px-4 py-1.5 text-xs font-medium text-emerald-200 hover:bg-emerald-500/10"
+            >
+              Request Demo
+            </a>
+          </div>
+
+          <button className="md:hidden inline-flex items-center justify-center rounded-xl border border-slate-700 px-3 py-1.5 text-xs text-slate-200">
+            Menu
+          </button>
+        </nav>
+      </header>
+
+      {/* HERO */}
+      <section className="relative overflow-hidden">
+        {/* background gradients */}
+        <div className="pointer-events-none absolute inset-0 -z-10">
+          <div className="absolute -left-40 -top-40 h-72 w-72 rounded-full bg-emerald-500/20 blur-3xl" />
+          <div className="absolute right-0 top-40 h-80 w-80 rounded-full bg-orange-500/20 blur-3xl" />
+        </div>
+
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16 lg:pt-20 lg:pb-24 grid lg:grid-cols-2 gap-10 items-center">
+          {/* Hero text */}
+          <div>
+            <p className="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-slate-900/60 px-3 py-1 text-[11px] font-medium text-emerald-200 mb-4">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              AI traffic ops for Coimbatore & beyond
+            </p>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight mb-4">
+              Turn Coimbatore&apos;s CCTV into{" "}
+              <span className="text-emerald-400">intelligent traffic control</span>.
+            </h1>
+            <p className="text-sm sm:text-base text-slate-300 leading-relaxed mb-6">
+              MACH-10: TrafficOps+ is an AI-driven playbook that minimizes
+              <span className="text-emerald-300">
+                {" "}
+                emergency delays, protects pedestrians and cyclists
+              </span>
+              , and reduces pollution hotspots across Coimbatore&apos;s
+              busiest corridors.
+            </p>
+
+            <div className="flex flex-wrap gap-3 mb-6">
+              <a
+                href="#demo"
+                className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-emerald-400 to-orange-400 px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 hover:from-emerald-300 hover:to-orange-300"
+              >
+                Pitch / Demo Request
+              </a>
+              <a
+                href="#solution"
+                className="inline-flex items-center justify-center rounded-full border border-slate-600 px-5 py-2.5 text-sm font-medium text-slate-200 hover:border-emerald-400/70 hover:text-emerald-200"
+              >
+                Explore capabilities
+              </a>
+            </div>
+
+            <dl className="grid grid-cols-3 gap-3 text-[11px] sm:text-xs text-slate-300 max-w-md">
+              <div className="border border-slate-800 rounded-xl px-3 py-2 bg-slate-900/60">
+                <dt className="text-slate-400">Ambulance delay</dt>
+                <dd className="font-semibold text-emerald-300">↓ Critical</dd>
+              </div>
+              <div className="border border-slate-800 rounded-xl px-3 py-2 bg-slate-900/60">
+                <dt className="text-slate-400">Pedestrian safety</dt>
+                <dd className="font-semibold text-emerald-300">↑ Protected</dd>
+              </div>
+              <div className="border border-slate-800 rounded-xl px-3 py-2 bg-slate-900/60">
+                <dt className="text-slate-400">Emissions hotspots</dt>
+                <dd className="font-semibold text-emerald-300">↓ Reduced</dd>
+              </div>
+            </dl>
+          </div>
+
+          {/* Hero image card – Coimbatore aerial / traffic */}
+          <div className="relative">
+            <div className="rounded-3xl border border-slate-800 bg-slate-900/80 p-3 sm:p-4 shadow-2xl shadow-black/60">
+              <div className="overflow-hidden rounded-2xl border border-slate-800">
+                {/* Smart city traffic / aerial junction — Coimbatore */}
+                <img
+                  src="https://th-i.thgim.com/public/incoming/7ofxvd/article70168529.ece/alternates/LANDSCAPE_1200/Uppilipalayam%20junction%202.jpg"
+                  alt="Aerial view of Uppilipalayam junction traffic in Coimbatore"
+                  className="w-full h-60 sm:h-72 object-cover"
+                />
+              </div>
+
+              <div className="mt-4 grid grid-cols-3 gap-2 text-[11px] text-slate-200">
+                <div className="rounded-xl border border-slate-800 bg-slate-950/70 px-3 py-2">
+                  <p className="text-slate-400 mb-1">Emergency Green Wave</p>
+                  <p className="font-semibold text-emerald-300">
+                    Critical corridors
+                  </p>
+                </div>
+                <div className="rounded-xl border border-slate-800 bg-slate-950/70 px-3 py-2">
+                  <p className="text-slate-400 mb-1">Dynamic Crosswalks</p>
+                  <p className="font-semibold text-emerald-300">
+                    Avinashi Road, CBD
+                  </p>
+                </div>
+                <div className="rounded-xl border border-slate-800 bg-slate-950/70 px-3 py-2">
+                  <p className="text-slate-400 mb-1">Pollution-aware</p>
+                  <p className="font-semibold text-emerald-300">
+                    Schools & hospitals
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Floating mini images using other categories */}
+            <div className="hidden sm:block">
+              {/* Ambulance in traffic */}
+              <div className="absolute -left-4 -bottom-6 w-32 rounded-2xl border border-slate-800 bg-slate-900/90 shadow-lg shadow-black/40 overflow-hidden">
+                <img
+                  src="https://i.ytimg.com/vi/9YYxOS480Gw/maxresdefault.jpg"
+                  alt="Ambulance navigating traffic in India"
+                  className="w-full h-20 object-cover"
+                />
+                <p className="px-2 pb-2 text-[10px] text-slate-300">
+                  Ambulance delays cut via automated green waves.
+                </p>
+              </div>
+
+              {/* Pedestrian crosswalk */}
+              <div className="absolute -right-4 -top-6 w-32 rounded-2xl border border-slate-800 bg-slate-900/90 shadow-lg shadow-black/40 overflow-hidden">
+                <img
+                  src="https://itdp.in/wp-content/uploads/2016/04/160420-NKN-blog-cover-Low-res.jpg"
+                  alt="Pedestrians at a crosswalk in an Indian city"
+                  className="w-full h-20 object-cover"
+                />
+                <p className="px-2 pb-2 text-[10px] text-slate-300">
+                  Adaptive crossings for Coimbatore&apos;s busiest junctions.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* PROBLEM */}
+      <section
+        id="problem"
+        className="border-t border-slate-800 bg-slate-950/90"
+      >
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16 grid lg:grid-cols-2 gap-10 items-start">
+          <div>
+            <h2 className="text-xl sm:text-2xl font-semibold mb-3 tracking-tight">
+              Urban mobility in Coimbatore is under pressure.
+            </h2>
+            <p className="text-sm sm:text-base text-slate-300 leading-relaxed mb-4">
+              Congestion, pollution, and safety risks are daily realities on
+              corridors like Avinashi Road, Trichy Road, and Uppilipalayam
+              junction. The impact is felt most by{" "}
+              <span className="text-emerald-300">
+                ambulances, fire services, pedestrians, cyclists, and
+                non-motorized commuters.
+              </span>
+            </p>
+            <ul className="space-y-3 text-sm text-slate-300">
+              <li className="flex gap-3">
+                <span className="mt-1 h-5 w-5 flex items-center justify-center rounded-full bg-emerald-500/15 text-[11px] text-emerald-300">
+                  1
+                </span>
+                <span>
+                  <span className="font-semibold">Life-threatening delays</span>{" "}
+                  for ambulances and fire trucks due to static signal plans and
+                  peak-hour congestion.
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span className="mt-1 h-5 w-5 flex items-center justify-center rounded-full bg-emerald-500/15 text-[11px] text-emerald-300">
+                  2
+                </span>
+                <span>
+                  <span className="font-semibold">Unsafe crossings</span> for
+                  pedestrians near flyovers, malls and school zones.
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span className="mt-1 h-5 w-5 flex items-center justify-center rounded-full bg-emerald-500/15 text-[11px] text-emerald-300">
+                  3
+                </span>
+                <span>
+                  <span className="font-semibold">Invisible road users</span>{" "}
+                  such as cyclists, rickshaws and micro-mobility vehicles that
+                  legacy systems ignore.
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span className="mt-1 h-5 w-5 flex items-center justify-center rounded-full bg-emerald-500/15 text-[11px] text-emerald-300">
+                  4
+                </span>
+                <span>
+                  <span className="font-semibold">Pollution hotspots</span> near
+                  hospitals, schools and residential pockets due to idling
+                  traffic.
+                </span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Supporting visual: pedestrians / urban street */}
+          <div className="rounded-3xl border border-slate-800 bg-slate-900/70 p-4 flex flex-col gap-4">
+            <div className="overflow-hidden rounded-2xl border border-slate-800">
+              <img
+                src="https://th-i.thgim.com/public/incoming/7ip5w8/article67924731.ece/alternates/LANDSCAPE_1200/PSX_20240307_133538.jpg"
+                alt="Busy urban street with vehicles and pedestrians"
+                className="w-full h-44 object-cover"
+              />
+            </div>
+            <div className="space-y-2 text-xs text-slate-300">
+              <h3 className="text-sm font-semibold text-slate-100">
+                Where MACH-10 intervenes
+              </h3>
+              <p>
+                By plugging into existing CCTV infrastructure and applying
+                computer vision plus rule-based decisioning, MACH-10 transforms
+                each junction into an intelligent node that understands{" "}
+                <span className="text-emerald-300">who</span> is on the road,{" "}
+                <span className="text-emerald-300">what</span> they need, and{" "}
+                <span className="text-emerald-300">how</span> signals should
+                adapt.
+              </p>
+              <p>
+                The result is a shift from car-centric throughput to{" "}
+                <span className="font-medium text-emerald-300">
+                  human-centric, safety-first operations.
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SOLUTION */}
+      <section
+        id="solution"
+        className="border-t border-slate-800 bg-slate-950"
+      >
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8">
+            <div>
+              <h2 className="text-xl sm:text-2xl font-semibold mb-2 tracking-tight">
+                MACH-10: TrafficOps+ – key capabilities
+              </h2>
+              <p className="text-sm text-slate-300 max-w-2xl">
+                A plug-and-play intelligence layer that sits on top of existing
+                signals and CCTV in Coimbatore, orchestrating traffic
+                dynamically in response to real-time conditions.
+              </p>
+            </div>
+            <div className="flex gap-2 text-[11px] text-slate-300">
+              <span className="inline-flex items-center rounded-full border border-emerald-400/40 px-3 py-1 bg-slate-900/60">
+                CCTV-native
+              </span>
+              <span className="inline-flex items-center rounded-full border border-slate-600 px-3 py-1 bg-slate-900/60">
+                City-scale ready
+              </span>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-5">
+            <article className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4 flex flex-col">
+              <h3 className="text-sm font-semibold mb-1.5">
+                Emergency Green Waves
+              </h3>
+              <p className="text-xs text-slate-300 mb-3">
+                Detect ambulances and fire trucks in CCTV feeds, then
+                orchestrate a corridor of green signals along their route to cut
+                response times across key stretches.
+              </p>
+              <ul className="text-[11px] text-slate-400 space-y-1.5 mb-3">
+                <li>• Real-time emergency vehicle detection</li>
+                <li>• Auto-prioritized signal phases</li>
+                <li>• Reduced stop-and-go at bottlenecks</li>
+              </ul>
+              <span className="mt-auto text-[11px] text-emerald-300">
+                Ideal for: EMS, fire services, smart-city cells
+              </span>
+            </article>
+
+            <article className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4 flex flex-col">
+              <h3 className="text-sm font-semibold mb-1.5">
+                Dynamic Pedestrian Crossings
+              </h3>
+              <p className="text-xs text-slate-300 mb-3">
+                Adjust crosswalk timings based on real-time pedestrian counts,
+                movement patterns, and vulnerable users at key intersections.
+              </p>
+              <ul className="text-[11px] text-slate-400 space-y-1.5 mb-3">
+                <li>• Crowd-aware walk cycles</li>
+                <li>• Safer school zones & CBD junctions</li>
+                <li>• Inclusion for slower-moving pedestrians</li>
+              </ul>
+              <span className="mt-auto text-[11px] text-emerald-300">
+                Ideal for: school clusters, market streets
+              </span>
+            </article>
+
+            <article className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4 flex flex-col">
+              <h3 className="text-sm font-semibold mb-1.5">
+                Pollution-Aware Routing
+              </h3>
+              <p className="text-xs text-slate-300 mb-3">
+                Combine live traffic flow with environmental sensitivity to
+                minimize idling near schools, hospitals and dense residential
+                pockets.
+              </p>
+              <ul className="text-[11px] text-slate-400 space-y-1.5 mb-3">
+                <li>• Soft-avoidance of sensitive zones</li>
+                <li>• Load balancing across alternate routes</li>
+                <li>• Fewer chronic emissions hotspots</li>
+              </ul>
+              <span className="mt-auto text-[11px] text-emerald-300">
+                Ideal for: climate-action & SDG teams
+              </span>
+            </article>
+          </div>
+
+          {/* Inclusive mobility row with cyclists/rickshaws */}
+          <div className="mt-8 rounded-3xl border border-slate-800 bg-slate-900/60 p-5 grid md:grid-cols-[1.2fr,1fr] gap-5 items-center">
+            <div>
+              <h3 className="text-sm font-semibold mb-2">Inclusive by design</h3>
+              <p className="text-xs sm:text-sm text-slate-300 mb-3">
+                From cyclists and share autos to rickshaws and delivery riders,
+                MACH-10 recognizes{" "}
+                <span className="text-emerald-300">
+                  diverse road users in Coimbatore
+                </span>{" "}
+                and feeds them into the decision engine.
+              </p>
+              <p className="text-xs text-slate-300">
+                Instead of optimizing only for cars, signal logic is tuned to
+                prioritize human safety and equity across all modes.
+              </p>
+            </div>
+            <div className="overflow-hidden rounded-2xl border border-slate-800">
+              {/* Cyclists / rickshaws */}
+              <img
+                src="https://th-i.thgim.com/public/incoming/go4cj3/article67796642.ece/alternates/FREE_1200/2085_30_1_2024_17_42_23_1_DSC_0202.JPG"
+                alt="Cyclists and non-motorized users in Indian traffic"
+                className="w-full h-40 sm:h-48 object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* TECH STACK */}
+      <section
+        id="stack"
+        className="border-t border-slate-800 bg-slate-950/95"
+      >
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8">
+            <div>
+              <h2 className="text-xl sm:text-2xl font-semibold mb-2 tracking-tight">
+                MACH-10 tech stack
+              </h2>
+              <p className="text-sm text-slate-300 max-w-2xl">
+                Designed for rapid pilots at a single junction and scalable to
+                full city deployments.
+              </p>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-4 gap-4 text-xs">
+            <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
+              <p className="text-[11px] uppercase tracking-wide text-slate-400 mb-2">
+                Perception
+              </p>
+              <ul className="space-y-1.5 text-slate-200">
+                <li>• YOLOv8 for multi-class detection</li>
+                <li>• OpenCV for tracking & localization</li>
+                <li>• Real-time CCTV stream ingestion</li>
+              </ul>
+            </div>
+            <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
+              <p className="text-[11px] uppercase tracking-wide text-slate-400 mb-2">
+                Decision Engine
+              </p>
+              <ul className="space-y-1.5 text-slate-200">
+                <li>• Rule-based signal logic</li>
+                <li>• Priority scores for EMS & vulnerable users</li>
+                <li>• Configurable city playbooks</li>
+              </ul>
+            </div>
+            <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
+              <p className="text-[11px] uppercase tracking-wide text-slate-400 mb-2">
+                Integration
+              </p>
+              <ul className="space-y-1.5 text-slate-200">
+                <li>• Signal controller APIs / interfaces</li>
+                <li>• Cloud or on-prem deployments</li>
+                <li>• REST / gRPC endpoints</li>
+              </ul>
+            </div>
+            <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
+              <p className="text-[11px] uppercase tracking-wide text-slate-400 mb-2">
+                Ops & Insights
+              </p>
+              <ul className="space-y-1.5 text-slate-200">
+                <li>• Real-time dashboards</li>
+                <li>• Anomaly alerts</li>
+                <li>• Scenario simulations</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* IMPACT / DEMO CTA */}
+      <section id="impact" className="border-t border-slate-800 bg-slate-950">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-8">
+            <div className="max-w-xl">
+              <h2 className="text-xl sm:text-2xl font-semibold mb-2 tracking-tight">
+                Impact & SDG alignment
+              </h2>
+              <p className="text-sm text-slate-300 mb-4">
+                MACH-10 does more than optimize vehicles. It directly advances
+                city-level goals around safety, climate, and equity.
+              </p>
+              <ul className="space-y-2 text-sm text-slate-300">
+                <li>
+                  •{" "}
+                  <span className="text-emerald-300">Reduced emissions</span>{" "}
+                  via smoother flows and fewer idling vehicles.
+                </li>
+                <li>
+                  •{" "}
+                  <span className="text-emerald-300">
+                    Improved emergency response
+                  </span>{" "}
+                  through automated prioritization.
+                </li>
+                <li>
+                  •{" "}
+                  <span className="text-emerald-300">Safer streets</span> for
+                  pedestrians, cyclists, and &quot;invisible&quot; road users.
+                </li>
+              </ul>
+            </div>
+            <div className="grid grid-cols-2 gap-3 text-xs max-w-sm">
+              <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-3">
+                <p className="text-[11px] font-semibold text-emerald-300 mb-1">
+                  SDG 3
+                </p>
+                <p className="text-slate-200">Good Health & Well-being</p>
+              </div>
+              <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-3">
+                <p className="text-[11px] font-semibold text-emerald-300 mb-1">
+                  SDG 11
+                </p>
+                <p className="text-slate-200">
+                  Sustainable Cities & Communities
+                </p>
+              </div>
+              <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-3">
+                <p className="text-[11px] font-semibold text-emerald-300 mb-1">
+                  SDG 13
+                </p>
+                <p className="text-slate-200">Climate Action</p>
+              </div>
+              <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-3">
+                <p className="text-[11px] font-semibold text-emerald-300 mb-1">
+                  SDG 9
+                </p>
+                <p className="text-slate-200">
+                  Industry, Innovation & Infrastructure
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* DEMO CTA */}
+          <div
+            id="demo"
+            className="rounded-3xl border border-emerald-500/40 bg-gradient-to-r from-emerald-500/10 via-slate-900 to-orange-500/10 p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4"
+          >
+            <div>
+              <h3 className="text-sm sm:text-base font-semibold mb-1">
+                Ready to pilot MACH-10 in Coimbatore?
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-200">
+                Share a few intersections and CCTV specs and we’ll simulate how
+                MACH-10 can reduce delays and emissions on your corridors.
+              </p>
+            </div>
+            <a
+              href="#contact"
+              className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-emerald-400 to-orange-400 px-5 py-2.5 text-sm font-semibold text-slate-950 hover:from-emerald-300 hover:to-orange-300"
+            >
+              Schedule a walkthrough
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* CONTACT / FOOTER */}
+      <section
+        id="contact"
+        className="border-t border-slate-800 bg-slate-950/95"
+      >
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="grid md:grid-cols-2 gap-8">
+            <div>
+              <h2 className="text-xl sm:text-2xl font-semibold mb-2 tracking-tight">
+                Let’s build smarter streets together.
+              </h2>
+              <p className="text-sm text-slate-300 mb-4">
+                Whether you’re a city authority, EMS operator, startup, or
+                hackathon team, MACH-10: TrafficOps+ can plug into existing
+                infrastructure with minimal friction.
+              </p>
+              <ul className="text-sm text-slate-300 space-y-2 mb-6">
+                <li>• Pilot at a single junction or corridor</li>
+                <li>• Integrate with existing signal controllers</li>
+                <li>• Scale to full city deployments</li>
+              </ul>
+            </div>
+
+            <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-5">
+              <form className="space-y-4 text-sm">
+                <div>
+                  <label className="block text-xs font-medium text-slate-300 mb-1">
+                    Name
+                  </label>
+                  <input
+                    type="text"
+                    className="w-full rounded-xl border border-slate-700 bg-slate-950/80 px-3 py-2 text-xs focus:outline-none focus:ring-1 focus:ring-emerald-400"
+                    placeholder="City official / partner / team lead"
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs font-medium text-slate-300 mb-1">
+                    Work Email
+                  </label>
+                  <input
+                    type="email"
+                    className="w-full rounded-xl border border-slate-700 bg-slate-950/80 px-3 py-2 text-xs focus:outline-none focus:ring-1 focus:ring-emerald-400"
+                    placeholder="you@city.gov / org.com"
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs font-medium text-slate-300 mb-1">
+                    Organization
+                  </label>
+                  <input
+                    type="text"
+                    className="w-full rounded-xl border border-slate-700 bg-slate-950/80 px-3 py-2 text-xs focus:outline-none focus:ring-1 focus:ring-emerald-400"
+                    placeholder="City name / agency / hackathon team"
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs font-medium text-slate-300 mb-1">
+                    How can MACH-10 help?
+                  </label>
+                  <textarea
+                    rows={3}
+                    className="w-full rounded-xl border border-slate-700 bg-slate-950/80 px-3 py-2 text-xs focus:outline-none focus:ring-1 focus:ring-emerald-400"
+                    placeholder="Share intersections, pain-points, or deployment ideas..."
+                  />
+                </div>
+                <button
+                  type="submit"
+                  className="w-full inline-flex items-center justify-center rounded-full bg-gradient-to-r from-emerald-400 to-orange-400 px-4 py-2.5 text-xs font-semibold text-slate-950 hover:from-emerald-300 hover:to-orange-300"
+                >
+                  Submit enquiry
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <div className="mt-8 border-t border-slate-800 pt-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-slate-500">
+            <p>
+              © {currentYear} MACH-10: TrafficOps+ · Built for Coimbatore
+              Smart-City & Hackathons.
+            </p>
+            <p>Responsive · Equitable · Sustainable Urban Infrastructure.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default Mach10Landing;
